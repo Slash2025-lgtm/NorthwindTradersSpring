@@ -1,6 +1,6 @@
 package com.pluralsight.NorthWindTradersSpringBoot.ui;
 
-import com.pluralsight.NorthWindTradersSpringBoot.data.Product;
+import com.pluralsight.NorthWindTradersSpringBoot.model.Product;
 import com.pluralsight.NorthWindTradersSpringBoot.data.ProductDao;
 
 import com.pluralsight.NorthWindTradersSpringBoot.util.UserOptions;

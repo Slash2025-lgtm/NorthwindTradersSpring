@@ -1,4 +1,4 @@
-package com.pluralsight.NorthWindTradersSpringBoot.data;
+package com.pluralsight.NorthWindTradersSpringBoot.model;
 
 public class Product {
 

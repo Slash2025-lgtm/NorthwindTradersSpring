@@ -1,5 +1,7 @@
 package com.pluralsight.NorthWindTradersSpringBoot.data;
 
+import com.pluralsight.NorthWindTradersSpringBoot.model.Product;
+
 import java.util.List;
 
 public interface ProductDao {
