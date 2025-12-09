@@ -26,12 +26,12 @@ public class JdbcProductDao implements ProductDao {
     @Override
     public List<Product> getAll() {
         this.products.clear();
-        String sql = "SELECT P.ProductID, P.ProductName, C.CategoryName, P.UnitPrice " +
+        String query = "SELECT P.ProductID, P.ProductName, C.CategoryName, P.UnitPrice " +
                 "FROM Products AS P JOIN " +
                 "Categories AS C ON (P.CategoryID = C.CategoryID) ";
 
         try(Connection connection = dataSource.getConnection()){
-            PreparedStatement statement = connection.prepareStatement(sql);
+            PreparedStatement statement = connection.prepareStatement(query);
             ResultSet result = statement.executeQuery();
             while(result.next()){
                 this.products.add(new Product(result.getInt(1), result.getString(2), result.getString(3),result.getDouble(4)));

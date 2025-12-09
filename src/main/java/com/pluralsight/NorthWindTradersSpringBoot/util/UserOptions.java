@@ -3,7 +3,7 @@ package com.pluralsight.NorthWindTradersSpringBoot.util;
 import java.util.Scanner;
 
 public class UserOptions {
-    private static Scanner keyboard = new Scanner(System.in);
+    private final static Scanner keyboard = new Scanner(System.in);
     public static String getUserInputSting() {
         System.out.print("User: ");
         String selected = keyboard.nextLine();
