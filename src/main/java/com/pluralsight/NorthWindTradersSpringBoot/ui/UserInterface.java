@@ -22,10 +22,10 @@ public class UserInterface {
         String productName = UserOptions.getUserInputSting();
 
         System.out.println("Please Enter the items Category");
-        String category = UserOptions.getUserInputSting();
+        int categoryId = UserOptions.getUserInputInt();
 
         System.out.println("Please Enter the items Price");
         double price = UserOptions.getUserInputDouble();
-        productDao.add(new Product(productID, productName, category, price));
+        productDao.add(productID, productName, categoryId, price);
     }
 }
