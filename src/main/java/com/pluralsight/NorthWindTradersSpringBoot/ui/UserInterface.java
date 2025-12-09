@@ -4,15 +4,17 @@ import com.pluralsight.NorthWindTradersSpringBoot.data.Product;
 import com.pluralsight.NorthWindTradersSpringBoot.data.ProductDao;
 
 import com.pluralsight.NorthWindTradersSpringBoot.util.UserOptions;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UserInterface {
-    private static ProductDao productDao;
 
-    public void displayAll() {
-        productDao.getAll().forEach(System.out::println);
+
+    public void displayAll(ProductDao productDao) {
+        productDao.getAll().stream().forEach(System.out::println);
     }
 
-    public void addToList() {
+    public void addToList(ProductDao productDao) {
         System.out.println("Please Enter the items Product ID");
         int productID = UserOptions.getUserInputInt();
 
