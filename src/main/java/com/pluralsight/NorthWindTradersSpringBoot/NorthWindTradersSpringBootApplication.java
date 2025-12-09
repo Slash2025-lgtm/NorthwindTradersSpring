@@ -11,7 +11,6 @@ import org.springframework.context.ApplicationContext;
 @SpringBootApplication
 public class NorthWindTradersSpringBootApplication {
 	public static void main(String[] args) {
-		UserInterface userInterface = new UserInterface();
-		userInterface.init();
+		SpringApplication.run(NorthWindTradersSpringBootApplication.class, args);
 	}
 }

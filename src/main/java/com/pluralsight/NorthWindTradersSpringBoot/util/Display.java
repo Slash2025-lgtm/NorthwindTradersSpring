@@ -1,8 +1,8 @@
-package com.pluralsight.NorthWindTradersSpringBoot.ui;
+package com.pluralsight.NorthWindTradersSpringBoot.util;
 
 public class Display {
 
-    public void displayMainMenu() {
+    public static void displayMainMenu() {
         System.out.println("------- Main Menu -------");
         System.out.println("1: List Products");
         System.out.println("2: Add Product");

@@ -1,44 +1,18 @@
 package com.pluralsight.NorthWindTradersSpringBoot.ui;
 
-import com.pluralsight.NorthWindTradersSpringBoot.NorthWindTradersSpringBootApplication;
 import com.pluralsight.NorthWindTradersSpringBoot.data.Product;
 import com.pluralsight.NorthWindTradersSpringBoot.data.ProductDao;
-import com.pluralsight.NorthWindTradersSpringBoot.data.SimpleProductDao;
-import com.pluralsight.NorthWindTradersSpringBoot.util.UserOptions;
-import org.springframework.boot.SpringApplication;
-import org.springframework.context.ApplicationContext;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.pluralsight.NorthWindTradersSpringBoot.util.UserOptions;
 
 public class UserInterface {
-    private static Display display = new Display();
     private static ProductDao productDao;
 
-    public void init() {
-        while (true) {
-         selectPrompt();
-        }
+    public void displayAll() {
+        productDao.getAll().forEach(System.out::println);
     }
 
-    private void selectPrompt() {
-        display.displayMainMenu();
-        int selected = UserOptions.getUserInputInt();
-
-        switch (selected) {
-            case 1 -> displayAll();
-            case 2 -> addToList();
-        }
-    }
-
-    private void displayAll() {
-        ApplicationContext context = SpringApplication.run(NorthWindTradersSpringBootApplication.class);
-
-        productDao = context.getBean(SimpleProductDao.class);
-        productDao.getAll().stream().forEach(System.out::println);
-    }
-
-    private void addToList() {
+    public void addToList() {
         System.out.println("Please Enter the items Product ID");
         int productID = UserOptions.getUserInputInt();
 
@@ -50,10 +24,6 @@ public class UserInterface {
 
         System.out.println("Please Enter the items Price");
         double price = UserOptions.getUserInputDouble();
-
-        ApplicationContext context = SpringApplication.run(NorthWindTradersSpringBootApplication.class);
-
-        productDao = context.getBean(SimpleProductDao.class);
         productDao.add(new Product(productID, productName, category, price));
     }
 }
